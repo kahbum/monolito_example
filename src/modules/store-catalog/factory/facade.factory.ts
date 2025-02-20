@@ -8,7 +8,7 @@ export default class StoreCatalogFacadeFatory {
         const productRepository = new ProductRepository();
         const findUseCase = new FindProductUseCase(productRepository);
         const findAllUseCase = new FindAllProductsUseCase(productRepository);
-        
+
         const facade = new StoreCatalogFacade({
             findUseCase: findUseCase,
             findAllUseCase: findAllUseCase

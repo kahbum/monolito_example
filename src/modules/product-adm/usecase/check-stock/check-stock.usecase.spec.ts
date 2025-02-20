@@ -24,7 +24,7 @@ describe("Check Stock usecase unit test", () => {
         const input = {
             productId: "1",
         };
-        
+
         const result = await checkStockUsecase.execute(input);
 
         expect(productRepository.find).toHaveBeenCalled();

@@ -29,5 +29,5 @@ export default class ProductRepository implements ProductGateway {
             salesPrice: product.salesPrice,
         });
     }
-    
+
 }

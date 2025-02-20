@@ -21,7 +21,7 @@ describe("ProductRepository test", () => {
     afterEach(async () => {
         await sequelize.close();
     });
-    
+
     it("should create a product", async () => {
 
         const productProps = {
@@ -34,7 +34,7 @@ describe("ProductRepository test", () => {
         const product = new Product(productProps);
         const productRepository = new ProductRepository();
         await productRepository.add(product);
-        
+
         const productDb = await ProductModel.findOne({
             where: { id: productProps.id.id },
         });

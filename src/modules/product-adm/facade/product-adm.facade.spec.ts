@@ -32,7 +32,7 @@ describe("ProductAdmFacade test", () => {
         // });
 
         const productFacade = ProductAdmFacadeFactory.create();
-        
+
         const input = {
             id: "1",
             name: "Product 1",
@@ -54,7 +54,7 @@ describe("ProductAdmFacade test", () => {
 
     it("should check product stock", async () => {
         const productFacade = ProductAdmFacadeFactory.create();
-        
+
         const input = {
             id: "1",
             name: "Product 1",

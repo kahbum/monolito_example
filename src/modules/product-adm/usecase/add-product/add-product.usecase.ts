@@ -19,7 +19,7 @@ export default class AddProductUseCase {
             purchasedPrice: input.purchasedPrice,
             stock: input.stock,
         };
-        
+
         const product = new Product(props);
 
         this._productRepository.add(product);

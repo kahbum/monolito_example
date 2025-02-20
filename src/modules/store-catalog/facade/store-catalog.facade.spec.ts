@@ -4,7 +4,7 @@ import StoreCatalogFacadeFatory from "../factory/facade.factory";
 
 describe("StoreCatalogFacade test", () => {
     let sequelize: Sequelize;
-    
+
     beforeEach(async () => {
         sequelize = new Sequelize({
             dialect: "sqlite",
