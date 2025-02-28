@@ -1,6 +1,6 @@
 import Client from "../domain/client.entity";
 import ClientGateway from "../gateway/client.gateway";
-import { ClientModel } from "./client.mode";
+import { ClientModel } from "./client.model";
 import Id from "../../@shared/domain/value-object/id.value-object";
 
 export default class ClientRepository implements ClientGateway {
