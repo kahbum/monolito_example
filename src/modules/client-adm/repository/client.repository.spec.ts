@@ -28,6 +28,13 @@ describe("ClientRepository test", () => {
             name: "Client 1",
             email: "x@x.com",
             address: "Address 1",
+            document: "document 1",
+            street: "street 1",
+            number: "number 1",
+            complement: "complement 1",
+            city: "city 1",
+            state: "state 1",
+            zipCode: "zipCode 1",
         });
 
         const repository = new ClientRepository();
@@ -50,6 +57,13 @@ describe("ClientRepository test", () => {
             name: "Client 1",
             email: "x@x.com",
             address: "Address 1",
+            document: "document 1",
+            street: "street 1",
+            number: "number 1",
+            complement: "complement 1",
+            city: "city 1",
+            state: "state 1",
+            zipCode: "zipCode 1",
             createdAt: new Date(),
             updatedAt: new Date(),
         });
