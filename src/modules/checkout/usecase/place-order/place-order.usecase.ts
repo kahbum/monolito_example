@@ -51,7 +51,6 @@ export default class PlaceOrderUseCase implements UseCaseInterface {
             id: new Id(client.id),
             name: client.name,
             email: client.email,
-            // TODO Change address here
             address: client.street,
         });
 
