@@ -6,7 +6,6 @@ const client = new Client({
     id: new Id("1"),
     name: "Client 1",
     email: "x@x.com",
-    address: "Address 1",
     document: "document 1",
     street: "street 1",
     number: "number 1",
@@ -39,6 +38,12 @@ describe("Find Client usecase unit test", () => {
         expect(result.id).toBe(input.id);
         expect(result.name).toEqual(client.name);
         expect(result.email).toEqual(client.email);
-        expect(result.address).toEqual(client.address);
+        expect(result.document).toBe(client.document);
+        expect(result.street).toBe(client.street);
+        expect(result.number).toBe(client.number);
+        expect(result.complement).toBe(client.complement);
+        expect(result.city).toBe(client.city);
+        expect(result.state).toBe(client.state);
+        expect(result.zipCode).toBe(client.zipCode);
     });
 });

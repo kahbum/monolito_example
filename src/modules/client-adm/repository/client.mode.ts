@@ -37,10 +37,6 @@ export class ClientModel extends Model {
     @Column({ allowNull: false })
     zipCode: string;
 
-    // TODO remove address
-    @Column({ allowNull: false })
-    address: string;
-
     @Column({ allowNull: false })
     createdAt: Date;
 

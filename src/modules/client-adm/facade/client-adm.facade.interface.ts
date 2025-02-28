@@ -2,7 +2,6 @@ export interface AddClientFacadeInputDto {
     id?: string;
     name: string;
     email: string;
-    address: string;
     document: string;
     street: string;
     number: string;
@@ -20,7 +19,6 @@ export interface FindClientFacadeOutputDto {
     id: string;
     name: string;
     email: string;
-    address: string;
     document: string;
     street: string;
     number: string;
