@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize-typescript";
+import request from "supertest";
 import { ProductModel } from "../../../modules/product-adm/repository/product.model";
 import { app } from "../express";
-import request from "supertest";
 
 describe("E2E tests for product", () => {
 
@@ -40,10 +40,10 @@ describe("E2E tests for product", () => {
         expect(response.body.purchasedPrice).toBe(product.purchasedPrice);
         expect(response.body.stock).toBe(product.stock);
         
-        const dbProduct = await ProductModel.findOne({ where: { id: response.body.id } });
-        expect(dbProduct.name).toBe(product.name);
-        expect(dbProduct.description).toBe(product.description);
-        expect(dbProduct.purchasedPrice).toBe(product.purchasedPrice);
-        expect(dbProduct.stock).toBe(product.stock);
+        const persistedProduct = await ProductModel.findOne({ where: { id: response.body.id } });
+        expect(persistedProduct.name).toBe(product.name);
+        expect(persistedProduct.description).toBe(product.description);
+        expect(persistedProduct.purchasedPrice).toBe(product.purchasedPrice);
+        expect(persistedProduct.stock).toBe(product.stock);
     });
 });
