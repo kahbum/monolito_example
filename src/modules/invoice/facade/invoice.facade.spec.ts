@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize-typescript";
 import { InvoiceModel } from "../repository/invoice.model";
 import InvoiceItemsModel from "../repository/invoice-items.model";
-import InvoiceFactory from "../factory/invoice.factory";
+import InvoiceFacadeFactory from "../factory/invoice.factory";
 
 describe("InvoiceFacade test", () => {
     let sequelize: Sequelize;
@@ -22,7 +22,7 @@ describe("InvoiceFacade test", () => {
     });
 
     it("should find an invoice", async () => {
-        const invoiceFacade = InvoiceFactory.create();
+        const invoiceFacade = InvoiceFacadeFactory.create();
 
         const invoice = {
             name: "Invoice Name 1",
@@ -86,7 +86,7 @@ describe("InvoiceFacade test", () => {
                 price: 10,
             }],
         };
-        const invoiceFacade = InvoiceFactory.create();
+        const invoiceFacade = InvoiceFacadeFactory.create();
 
         const resultGenerate = await invoiceFacade.generate(invoice);
 
