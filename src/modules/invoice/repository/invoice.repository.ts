@@ -30,31 +30,36 @@ export default class InvoiceRepository implements InvoiceGateway {
     }
 
     async generate(invoice: Invoice): Promise<void> {
-        await InvoiceModel.create(
-            {
-                id: invoice.id.id,
-                name: invoice.name,
-                document: invoice.document,
-                street: invoice.address.street,
-                number: invoice.address.number,
-                complement: invoice.address.complement,
-                city: invoice.address.city,
-                state: invoice.address.state,
-                zipCode: invoice.address.zipCode,
-                items: invoice.items.map((invoiceItem) => ({
-                    id: invoiceItem.id.id,
-                    name: invoiceItem.name,
-                    price: invoiceItem.price,
-                    createdAt: invoiceItem.createdAt || new Date(),
-                    updatedAt: invoiceItem.updatedAt || new Date(),
-                })),
-                total: invoice.total,
-                createdAt: invoice.createdAt || new Date(),
-                updatedAt: invoice.updatedAt || new Date(),
-            },
-            {
-                include: [{model: InvoiceItemsModel}],
-            },
-        );
+        try {
+            await InvoiceModel.create(
+                {
+                    id: invoice.id.id,
+                    name: invoice.name,
+                    document: invoice.document,
+                    street: invoice.address.street,
+                    number: invoice.address.number,
+                    complement: invoice.address.complement,
+                    city: invoice.address.city,
+                    state: invoice.address.state,
+                    zipCode: invoice.address.zipCode,
+                    items: invoice.items.map((invoiceItem) => ({
+                        id: invoiceItem.id.id,
+                        name: invoiceItem.name,
+                        price: invoiceItem.price,
+                        createdAt: invoiceItem.createdAt || new Date(),
+                        updatedAt: invoiceItem.updatedAt || new Date(),
+                    })),
+                    total: invoice.total,
+                    createdAt: invoice.createdAt || new Date(),
+                    updatedAt: invoice.updatedAt || new Date(),
+                },
+                {
+                    include: [{model: InvoiceItemsModel}],
+                },
+            );
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
     }
 }
